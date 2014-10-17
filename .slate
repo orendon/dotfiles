@@ -1,0 +1,36 @@
+# My basic ~/.slate file.
+# It has some tweaks so it doesn't fuck with my IDE
+
+config defaultToCurrentScreen true
+config nudgePercentOf screenSize
+config resizePercentOf screenSize
+
+# Resize Bindings -> resize
+bind right:alt;ctrl   resize +5% +0
+bind left:alt;ctrl    resize -5% +0
+bind up:alt;ctrl      resize +0   -10%
+bind down:alt;ctrl    resize +0   +10%
+
+# Push Bindings -> split horizontal/vertical
+bind right:ctrl;alt;cmd push right bar-resize:screenSizeX/2
+bind left:ctrl;alt;cmd   push left  bar-resize:screenSizeX/2
+bind up:ctrl;alt;cmd     push up    bar-resize:screenSizeY/2
+bind down:ctrl;alt;cmd   push down  bar-resize:screenSizeY/2
+
+# Nudge Bindings -> Move window
+bind right:shift;alt;ctrl nudge +10% +0
+bind left:shift;alt;ctrl  nudge -10% +0
+bind up:shift;alt;ctrl    nudge +0   -10%
+bind down:shift;alt;ctrl  nudge +0   +10%
+
+# Throw Bindings -> restore original size
+bind 1:ctrl;alt         throw 0 resize
+bind 2:ctrl;alt         throw 1 resize
+bind down:shift;ctrl;alt;cmd  throw down  resize
+
+# Focus Bindings
+bind up:cmd;shift   focus behind
+bind down:cmd;shift focus behind
+
+# Window Hints
+bind esc:cmd hint

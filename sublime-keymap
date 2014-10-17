@@ -1,0 +1,3 @@
+[
+  { "keys": ["ctrl+k", "ctrl+m"], "command": "toggle_minimap" }
+]
