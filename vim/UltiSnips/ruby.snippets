@@ -1,0 +1,88 @@
+snippet desc
+describe "#${1}" do
+	${2}
+end
+${0}
+endsnippet
+
+snippet be
+before :each do
+	${1}
+end
+${0}
+endsnippet
+
+snippet cd
+class_double("${1}")${0}
+endsnippet
+
+snippet bf
+before_filter :${0}
+endsnippet
+
+snippet bt
+belongs_to :${0}
+endsnippet
+
+snippet ex
+expect(${1}).to eq(${2})${0}
+endsnippet
+
+snippet exa
+expect(assigns(:${1})).to eq(${2})${0}
+endsnippet
+
+snippet exr
+expect(${1:subject}).to receive(${2:method})
+endsnippet
+
+snippet exrw
+expect(${1:subject}).to receive(${2:method}).with(${3:result})$0
+endsnippet
+
+snippet al
+allow(${1}).to receive(${2}).and_return(${3})$0
+endsnippet
+
+snippet hm
+has_many :${1:object}${0}
+endsnippet
+
+snippet it
+it "${1}"${0}
+endsnippet
+
+snippet Given
+Given(/^${1}$/) do
+	${0}
+end
+endsnippet
+
+snippet let
+let(:${1}) { ${2} }${0}
+endsnippet
+
+snippet pry
+binding.pry
+endsnippet
+
+snippet vp
+validates :${1}, :presence => true${0}
+endsnippet
+
+snippet scr
+page.driver.resize(1600, 800)
+page.driver.render('/Users/cezar/Desktop/${1}.png', :full => true)${0}
+endsnippet
+
+snippet itrdr
+it "redirects /${1:from-url} to /${2:to-url}" do
+	get '/$1'
+	expect(response).to redirect_to("/$2")
+	expect(response.status).to eq(301)
+end
+endsnippet
+
+snippet svp
+save_and_open_page
+endsnippet
