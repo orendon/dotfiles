@@ -97,6 +97,8 @@
 ;; a .yml file
 (add-to-list 'load-path "~/.emacs.d/vendor")
 
+(require 'inf-ruby)
+(add-hook 'enh-ruby-mode-hook 'inf-ruby-minor-mode)
 
 ;;;;
 ;; Customization
