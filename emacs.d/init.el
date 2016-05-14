@@ -8,6 +8,9 @@
 ;; hide emacs toolbar
 (tool-bar-mode -1)
 
+;; enable line numbers on every buffer
+(global-linum-mode t)
+
 ;; clojure
 (unless (package-installed-p 'clojure-mode)
   (package-install 'clojure-mode))
