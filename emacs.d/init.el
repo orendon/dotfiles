@@ -9,7 +9,6 @@
 (tool-bar-mode -1)
 (global-linum-mode t)
 (set-keyboard-coding-system 'utf-8)
-(global-set-key [(meta p)] 'find-file-in-project-by-selected)
 
 ;; clojure
 (unless (package-installed-p 'clojure-mode)
@@ -36,6 +35,8 @@
 ;; search project files
 (unless (package-installed-p 'find-file-in-project)
   (package-install 'find-file-in-project))
-
 (setq ffip-match-path-instead-of-filename t)
 
+;; workflow
+(global-set-key [(meta p)] 'find-file-in-project-by-selected)
+(add-hook 'before-save-hook 'whitespace-cleanup)
