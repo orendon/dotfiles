@@ -11,6 +11,7 @@ alias rdr='rake db:rollback'
 
 # Git aliases
 alias g='git'
+alias gc='git commit'
 alias ga='git add'
 alias gapa='git add --patch'
 alias gst='git status'
@@ -34,3 +35,4 @@ alias glo='git log --oneline --decorate'
 alias glol="git log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit"
 alias glola="git log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit --all"
 alias glog='git log --oneline --decorate --graph'
+
