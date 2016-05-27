@@ -9,6 +9,18 @@
 (tool-bar-mode -1)
 (global-linum-mode t)
 (set-keyboard-coding-system 'utf-8)
+;; unbind right-alt so I can use spanish keys (aquaemacs)
+(setq ns-right-alternate-modifier nil)
+
+;; workflow
+(global-set-key [(meta p)] 'find-file-in-project-by-selected)
+(add-hook 'before-save-hook 'whitespace-cleanup)
+
+;; search project files
+(unless (package-installed-p 'find-file-in-project)
+  (package-install 'find-file-in-project))
+(setq ffip-match-path-instead-of-filename t)
+
 
 ;; clojure
 (unless (package-installed-p 'clojure-mode)
@@ -34,12 +46,3 @@
 ;; git
 (unless (package-installed-p 'magit)
   (package-install 'magit))
-
-;; search project files
-(unless (package-installed-p 'find-file-in-project)
-  (package-install 'find-file-in-project))
-(setq ffip-match-path-instead-of-filename t)
-
-;; workflow
-(global-set-key [(meta p)] 'find-file-in-project-by-selected)
-(add-hook 'before-save-hook 'whitespace-cleanup)
