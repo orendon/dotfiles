@@ -9,8 +9,10 @@
 (tool-bar-mode -1)
 (global-linum-mode t)
 (set-keyboard-coding-system 'utf-8)
+(when (fboundp 'scroll-bar-mode) (scroll-bar-mode -1))
 ;; unbind right-alt so I can use spanish keys (aquaemacs)
 (setq ns-right-alternate-modifier nil)
+(add-to-list 'exec-path "/usr/local/bin")
 
 ;; workflow
 (global-set-key [(meta p)] 'find-file-in-project-by-selected)
