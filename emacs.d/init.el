@@ -29,8 +29,11 @@
   (package-install 'cider))
 (unless (package-installed-p 'paredit)
   (package-install 'paredit))
+(unless (package-installed-p 'rainbow-delimiters)
+  (package-install 'rainbow-delimiters))
 
 (add-hook 'clojure-mode-hook #'paredit-mode)
+(add-hook 'clojure-mode-hook #'rainbow-delimiters-mode)
 
 ;; ruby
 (unless (package-installed-p 'robe)
