@@ -3,20 +3,32 @@
 (package-initialize)
 
 (add-to-list 'package-archives
-	     '("melpa" . "https://melpa.org/packages/") t)
+             '("melpa" . "https://melpa.org/packages/") t)
 
 ;; personal preferences
 (tool-bar-mode -1)
-(global-linum-mode t)
+(global-linum-mode -1)
 (set-keyboard-coding-system 'utf-8)
 (when (fboundp 'scroll-bar-mode) (scroll-bar-mode -1))
+(prefer-coding-system 'utf-8)
+(blink-cursor-mode t)
+(show-paren-mode 1)
+(setq-default indent-tabs-mode nil) ;; no tabs
+
 ;; unbind right-alt so I can use spanish keys (aquaemacs)
 (setq ns-right-alternate-modifier nil)
-(add-to-list 'exec-path "/usr/local/bin")
+
+;; font and theme
+(setq mac-allow-anti-aliasing t)
+(set-default-font "-apple-inconsolata-medium-r-normal--0-0-0-0-m-0-iso10646-1")
+(set-face-attribute 'default nil :height 160)
+(load-theme 'adwaita)
 
 ;; workflow
+(add-to-list 'exec-path "/usr/local/bin")
 (global-set-key [(meta p)] 'find-file-in-project-by-selected)
 (add-hook 'before-save-hook 'whitespace-cleanup)
+(global-set-key (kbd "C-x g") 'magit-status)
 
 ;; search project files
 (unless (package-installed-p 'find-file-in-project)
@@ -51,3 +63,8 @@
 ;; git
 (unless (package-installed-p 'magit)
   (package-install 'magit))
+
+;; golang
+(unless (package-installed-p 'go-mode)
+  (package-install 'go-mode))
+(add-hook 'before-save-hook 'gofmt-before-save)
