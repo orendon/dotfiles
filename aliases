@@ -2,6 +2,18 @@
 alias myemacs="/Applications/Emacs.app/Contents/MacOS/Emacs -nw"
 alias dokku='$HOME/.dokku/contrib/dokku_client.sh'
 
+# docker
+alias dkrc='docker-compose'
+alias dkrm='docker-machine'
+alias dkrcr='eval "$(docker-machine env default)"'
+
+# clojure
+alias lrun='lein run'
+alias lrepl='lein repl'
+alias lrepld='lein repl :connect 7000'
+alias ltr='lein test-refresh'
+alias lm='lein migratus'
+
 # Rails aliases
 alias rc='rails console'
 alias rd='rails destroy'
