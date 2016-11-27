@@ -14,6 +14,7 @@
 (blink-cursor-mode t)
 (show-paren-mode 1)
 (setq-default indent-tabs-mode nil) ;; no tabs
+(defalias 'yes-or-no-p 'y-or-n-p)
 
 ;; unbind right-alt so I can use spanish keys (aquaemacs)
 (setq ns-right-alternate-modifier nil)
