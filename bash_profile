@@ -1,4 +1,8 @@
 PATH=$PATH:~/bin/
+
+# /usr/libexec/java_home
+PATH=$PATH:/Library/Java/JavaVirtualMachines/jdk1.8.0_112.jdk/Contents/Home
+
 export PATH
 
 export GOPATH=$HOME/dev/go
