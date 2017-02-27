@@ -21,8 +21,8 @@
 
 ;; font and theme
 (setq mac-allow-anti-aliasing t)
-(set-default-font "-apple-inconsolata-medium-r-normal--0-0-0-0-m-0-iso10646-1")
-(set-face-attribute 'default nil :height 160)
+(set-default-font "Inconsolata")
+(set-face-attribute 'default nil :height 180)
 (load-theme 'adwaita)
 
 ;; workflow
@@ -64,6 +64,14 @@
 ;; git
 (unless (package-installed-p 'magit)
   (package-install 'magit))
+
+;; erlang
+(setq load-path (cons "/usr/local/lib/erlang/lib/tools-2.9/emacs/" load-path))
+(setq erlang-root-dir "/usr/local/lib/erlang")
+(setq exec-path (cons "/usr/local/lib/erlang/bin" exec-path))
+(setq erlang-man-root-dir "/usr/local/lib/erlang/man")
+(require 'erlang-start)
+(require 'erlang-eunit)
 
 ;; golang
 (unless (package-installed-p 'go-mode)
