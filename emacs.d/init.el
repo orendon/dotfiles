@@ -72,6 +72,7 @@
 (setq erlang-man-root-dir "/usr/local/lib/erlang/man")
 (require 'erlang-start)
 (require 'erlang-eunit)
+(require 'erlang-flymake)
 
 ;; golang
 (unless (package-installed-p 'go-mode)
