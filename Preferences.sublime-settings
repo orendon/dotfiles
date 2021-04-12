@@ -1,18 +1,25 @@
 {
-	"color_scheme": "Packages/Theme - Spacegray/base16-eighties.dark.tmTheme",
-	"ensure_newline_at_eof_on_save": true,
-	"font_face": "Source Code Pro",
-	"font_size": 15,
-	"highlight_line": true,
-	"highlight_modified_tabs": true,
-	"ignored_packages":
-	[
-		"Vintage"
-	],
-	"remember_open_files": false,
-	"tab_size": 2,
-	"theme": "Spacegray Eighties.sublime-theme",
-	"translate_tabs_to_spaces": true,
-	"trim_trailing_white_space_on_save": true,
-	"vintage_start_in_command_mode": false
+        "bold_folder_labels": true,
+        "color_scheme": "Packages/Theme - Afterglow/Afterglow.tmTheme",
+        "draw_white_space": "all",
+        "ensure_newline_at_eof_on_save": true,
+        "font_face": "Monaco",
+        "font_size": 15,
+        "highlight_line": true,
+        "highlight_modified_tabs": true,
+        "ignored_packages":
+        [
+                "Vintage"
+        ],
+        "line_padding_bottom": 1,
+        "line_padding_top": 1,
+        "remember_open_files": false,
+        "tab_size": 4,
+        "tabs_medium": false,
+        "tabs_small": true,
+        "theme": "Afterglow.sublime-theme",
+        "translate_tabs_to_spaces": true,
+        "trim_trailing_white_space_on_save": true,
+        "vintage_start_in_command_mode": false,
+        "word_wrap": "false"
 }

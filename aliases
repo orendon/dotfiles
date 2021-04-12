@@ -2,6 +2,9 @@
 alias myemacs="/Applications/Emacs.app/Contents/MacOS/Emacs -nw"
 alias dokku='$HOME/.dokku/contrib/dokku_client.sh'
 
+#dokku
+alias dokku='ssh dokku@ga.barista-v.com'
+
 # docker
 alias dkrc='docker-compose'
 alias dkrm='docker-machine'
@@ -24,6 +27,10 @@ alias rs='rails server'
 alias rdm='rake db:migrate'
 alias rdms='rake db:migrate:status'
 alias rdr='rake db:rollback'
+
+# Ruby aliases
+alias bi='bundle install'
+alias bu='bundle update'
 
 # Git aliases
 alias g='git'
@@ -51,3 +58,5 @@ alias glo='git log --oneline --decorate'
 alias glol="git log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit"
 alias glola="git log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit --all"
 alias glog='git log --oneline --decorate --graph'
+alias gbpurge='git branch --merged | grep -v "\*" | grep -v "master" | grep -v "develop" | grep -v "staging" | xargs -n 1 git branch -d'
+

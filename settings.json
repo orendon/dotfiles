@@ -1,0 +1,61 @@
+{
+    "window.zoomLevel": 0,
+
+    "terminal.integrated.fontSize": 14,
+    "terminal.integrated.inheritEnv": false,
+
+    "workbench.editor.enablePreview": false,
+    "workbench.editor.showTabs": false,
+    "files.exclude": {
+        "**/*.pyc": true
+    },
+    "files.insertFinalNewline": true,
+    "[json]": {
+        "editor.defaultFormatter": "vscode.json-language-features"
+    },
+
+    "editor.fontSize": 15,
+    "editor.renderWhitespace": "all",
+    "editor.insertSpaces": true,
+    "editor.detectIndentation": false,
+    "editor.trimAutoWhitespace": true,
+    "editor.minimap.enabled": false,
+    "editor.formatOnSave": true,
+    "editor.suggestSelection": "first",
+    //"editor.codeActionsOnSave": null,
+
+    "python.linting.enabled": true,
+    "python.linting.maxNumberOfProblems": 50,
+    "python.linting.flake8Enabled": true,
+    //"python.formatting.provider": "yapf",
+    "python.formatting.provider": "autopep8",
+
+    "[ruby]": { // or [erb] / [gemfile]
+        "editor.formatOnSave": false
+    },
+
+    "C_Cpp.clang_format_fallbackStyle": "{ BasedOnStyle: Google, IndentWidth: 4, ColumnLimit: 0}",
+
+    "code-runner.runInTerminal": true,
+    "code-runner.executorMap": {
+        "cpp": "clang++ -std=c++14 -Wall -O2 $fullFileName",
+        //"cpp": "clang++ -std=c++14 -Wall -O2 $fullFileName && ./a.out < sample.txt"
+    },
+
+    "vsintellicode.modify.editor.suggestSelection": "automaticallyOverrodeDefaultValue",
+    "java.semanticHighlighting.enabled": true,
+    "editor.rulers": [
+    
+    ],
+    "editor.codeActionsOnSave": null,
+    "editor.quickSuggestions": null,
+    "cph.language.cpp.Args": "-std=c++17 -O2 -Wall -Wextra -Wshadow -Wno-unused-result",
+    "editor.fontLigatures": null,
+    "workbench.colorTheme": "One Monokai",
+    "editor.fontWeight": null,
+    "workbench.editor.showTabs": true,
+    "workbench.sideBar.location": "right",
+    "cph.general.defaultLanguage": "cpp",
+    "cph.general.useShortCodeForcesName": true
+}
+

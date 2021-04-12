@@ -29,8 +29,8 @@ bind 2:ctrl;alt         throw 1 resize
 bind down:shift;ctrl;alt;cmd  throw down  resize
 
 # Focus Bindings
-bind up:cmd;shift   focus behind
-bind down:cmd;shift focus behind
+#bind up:cmd;shift   focus behind
+#bind down:cmd;shift focus behind
 
 # Window Hints
 bind esc:cmd hint

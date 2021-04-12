@@ -21,9 +21,11 @@
 
 ;; font and theme
 (setq mac-allow-anti-aliasing t)
-(set-default-font "Inconsolata")
-(set-face-attribute 'default nil :height 180)
-(load-theme 'adwaita)
+;(set-default-font "Inconsolata")
+(set-face-attribute 'default nil :height 160)
+(load-theme 'wombat)
+;(load-theme 'tango-dark)
+;(load-theme 'adwaita)
 
 ;; workflow
 (add-to-list 'exec-path "/usr/local/bin")
@@ -31,11 +33,21 @@
 (add-hook 'before-save-hook 'whitespace-cleanup)
 (global-set-key (kbd "C-x g") 'magit-status)
 
+;; Syntax Checking
+(unless (package-installed-p 'flycheck)
+  (package-install 'flycheck))
+(global-flycheck-mode)
+
 ;; search project files
 (unless (package-installed-p 'find-file-in-project)
   (package-install 'find-file-in-project))
 (setq ffip-match-path-instead-of-filename t)
 
+;; Snippets (non shell mode)
+(unless (package-installed-p 'yasnippet-snippets)
+  (package-install 'yasnippet-snippets))
+;(require 'yasnippet)
+;(yas-global-mode 1)
 
 ;; clojure
 (unless (package-installed-p 'clojure-mode)
@@ -53,28 +65,47 @@
 ;; ruby
 (unless (package-installed-p 'robe)
   (package-install 'robe))
-(unless (package-installed-p 'enh-ruby-mode)
-  (package-install 'enh-ruby-mode))
-
-(autoload 'enh-ruby-mode "enh-ruby-mode" "Major mode for ruby files" t)
-(add-to-list 'auto-mode-alist '("\\.rb$" . enh-ruby-mode))
-(add-to-list 'interpreter-mode-alist '("ruby" . enh-ruby-mode))
-(add-hook 'enh-ruby-mode-hook 'robe-mode)
+(add-hook 'ruby-mode-hook 'robe-mode)
 
 ;; git
 (unless (package-installed-p 'magit)
   (package-install 'magit))
 
 ;; erlang
-(setq load-path (cons "/usr/local/lib/erlang/lib/tools-2.9/emacs/" load-path))
+(setq load-path (cons "/usr/local/lib/erlang/lib/tools-3.0.2/emacs/" load-path))
 (setq erlang-root-dir "/usr/local/lib/erlang")
 (setq exec-path (cons "/usr/local/lib/erlang/bin" exec-path))
 (setq erlang-man-root-dir "/usr/local/lib/erlang/man")
+;; (defvar inferior-erlang-prompt-timeout t)
 (require 'erlang-start)
 (require 'erlang-eunit)
 (require 'erlang-flymake)
+;; erlang-distel
+;; (add-to-list 'load-path "~/.emacs.d/distel/elisp")
+;; (require 'distel)
+;; (distel-setup)
 
 ;; golang
 (unless (package-installed-p 'go-mode)
   (package-install 'go-mode))
 (add-hook 'before-save-hook 'gofmt-before-save)
+(custom-set-variables
+ ;; custom-set-variables was added by Custom.
+ ;; If you edit it by hand, you could mess it up, so be careful.
+ ;; Your init file should contain only one such instance.
+ ;; If there is more than one, they won't work right.
+ '(package-selected-packages
+   (quote
+    (yasnippet-snippets flycheck coffee-mode robe rainbow-delimiters paredit magit go-mode find-file-in-project enh-ruby-mode cider))))
+(custom-set-faces
+ ;; custom-set-faces was added by Custom.
+ ;; If you edit it by hand, you could mess it up, so be careful.
+ ;; Your init file should contain only one such instance.
+ ;; If there is more than one, they won't work right.
+ )
+
+;; C++
+(unless (package-installed-p 'modern-cpp-font-lock)
+  (package-install 'modern-cpp-font-lock))
+(add-hook 'c++-mode-hook #'modern-c++-font-lock-mode)
+(setq flycheck-gcc-language-standard "c++17")
